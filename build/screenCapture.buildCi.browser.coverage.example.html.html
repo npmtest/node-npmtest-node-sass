@@ -1,6 +1,4 @@
-<!doctype html>
-<html lang="en">
-<head>
+<html lang="en"><head>
     <title>Code coverage report for node-npmtest-node-sass/node-sass/lib/extensions.js</title>
     <meta charset="utf-8">
     <style>
@@ -210,11 +208,11 @@
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-node-sass/node-sass/lib/</a> &#187; extensions.js</div>
+    <div class="path"><a href="../../../index.html">All files</a> » <a href="index.html">node-npmtest-node-sass/node-sass/lib/</a> » extensions.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
-<tr><td class="line-count">1
+<tbody><tr><td class="line-count">1
 2
 3
 4
@@ -1058,14 +1056,14 @@ var eol = require('os').EOL,
  *
  * @api public
  */
-<span class="fstat-no" title="function not covered" >function getHumanPlatform(platform) {</span>
-<span class="cstat-no" title="statement not covered" >  switch (platform || process.platform) {</span>
-    case 'darwin': <span class="cstat-no" title="statement not covered" >return 'OS X';</span>
-    case 'freebsd': <span class="cstat-no" title="statement not covered" >return 'FreeBSD';</span>
-    case 'linux': <span class="cstat-no" title="statement not covered" >return 'Linux';</span>
-    case 'linux_musl': <span class="cstat-no" title="statement not covered" >return 'Linux/musl';</span>
-    case 'win32': <span class="cstat-no" title="statement not covered" >return 'Windows';</span>
-    default: <span class="cstat-no" title="statement not covered" >return false;</span>
+<span class="fstat-no" title="function not covered">function getHumanPlatform(platform) {</span>
+<span class="cstat-no" title="statement not covered">  switch (platform || process.platform) {</span>
+    case 'darwin': <span class="cstat-no" title="statement not covered">return 'OS X';</span>
+    case 'freebsd': <span class="cstat-no" title="statement not covered">return 'FreeBSD';</span>
+    case 'linux': <span class="cstat-no" title="statement not covered">return 'Linux';</span>
+    case 'linux_musl': <span class="cstat-no" title="statement not covered">return 'Linux/musl';</span>
+    case 'win32': <span class="cstat-no" title="statement not covered">return 'Windows';</span>
+    default: <span class="cstat-no" title="statement not covered">return false;</span>
   }
 }
 &nbsp;
@@ -1078,12 +1076,12 @@ var eol = require('os').EOL,
  *
  * @api public
  */
-<span class="fstat-no" title="function not covered" >function getHumanArchitecture(arch) {</span>
-<span class="cstat-no" title="statement not covered" >  switch (arch || process.arch) {</span>
-    case 'ia32': <span class="cstat-no" title="statement not covered" >return '32-bit';</span>
-    case 'x86': <span class="cstat-no" title="statement not covered" >return '32-bit';</span>
-    case 'x64': <span class="cstat-no" title="statement not covered" >return '64-bit';</span>
-    default: <span class="cstat-no" title="statement not covered" >return false;</span>
+<span class="fstat-no" title="function not covered">function getHumanArchitecture(arch) {</span>
+<span class="cstat-no" title="statement not covered">  switch (arch || process.arch) {</span>
+    case 'ia32': <span class="cstat-no" title="statement not covered">return '32-bit';</span>
+    case 'x86': <span class="cstat-no" title="statement not covered">return '32-bit';</span>
+    case 'x64': <span class="cstat-no" title="statement not covered">return '64-bit';</span>
+    default: <span class="cstat-no" title="statement not covered">return false;</span>
   }
 }
 &nbsp;
@@ -1097,20 +1095,20 @@ var eol = require('os').EOL,
  *
  * @api public
  */
-<span class="fstat-no" title="function not covered" >function getHumanNodeVersion(abi) {</span>
-<span class="cstat-no" title="statement not covered" >  switch (parseInt(abi || process.versions.modules, 10)) {</span>
-    case 11: <span class="cstat-no" title="statement not covered" >return 'Node 0.10.x';</span>
-    case 14: <span class="cstat-no" title="statement not covered" >return 'Node 0.12.x';</span>
-    case 42: <span class="cstat-no" title="statement not covered" >return 'io.js 1.x';</span>
-    case 43: <span class="cstat-no" title="statement not covered" >return 'io.js 1.1.x';</span>
-    case 44: <span class="cstat-no" title="statement not covered" >return 'io.js 2.x';</span>
-    case 45: <span class="cstat-no" title="statement not covered" >return 'io.js 3.x';</span>
-    case 46: <span class="cstat-no" title="statement not covered" >return 'Node.js 4.x';</span>
-    case 47: <span class="cstat-no" title="statement not covered" >return 'Node.js 5.x';</span>
-    case 48: <span class="cstat-no" title="statement not covered" >return 'Node.js 6.x';</span>
-    case 51: <span class="cstat-no" title="statement not covered" >return 'Node.js 7.x';</span>
-    case 54: <span class="cstat-no" title="statement not covered" >return 'Node.js 8.x';</span>
-    default: <span class="cstat-no" title="statement not covered" >return false;</span>
+<span class="fstat-no" title="function not covered">function getHumanNodeVersion(abi) {</span>
+<span class="cstat-no" title="statement not covered">  switch (parseInt(abi || process.versions.modules, 10)) {</span>
+    case 11: <span class="cstat-no" title="statement not covered">return 'Node 0.10.x';</span>
+    case 14: <span class="cstat-no" title="statement not covered">return 'Node 0.12.x';</span>
+    case 42: <span class="cstat-no" title="statement not covered">return 'io.js 1.x';</span>
+    case 43: <span class="cstat-no" title="statement not covered">return 'io.js 1.1.x';</span>
+    case 44: <span class="cstat-no" title="statement not covered">return 'io.js 2.x';</span>
+    case 45: <span class="cstat-no" title="statement not covered">return 'io.js 3.x';</span>
+    case 46: <span class="cstat-no" title="statement not covered">return 'Node.js 4.x';</span>
+    case 47: <span class="cstat-no" title="statement not covered">return 'Node.js 5.x';</span>
+    case 48: <span class="cstat-no" title="statement not covered">return 'Node.js 6.x';</span>
+    case 51: <span class="cstat-no" title="statement not covered">return 'Node.js 7.x';</span>
+    case 54: <span class="cstat-no" title="statement not covered">return 'Node.js 8.x';</span>
+    default: <span class="cstat-no" title="statement not covered">return false;</span>
   }
 }
 &nbsp;
@@ -1124,30 +1122,30 @@ var eol = require('os').EOL,
  *
  * @api public
  */
-<span class="fstat-no" title="function not covered" >function getHumanEnvironment(env) {</span>
-<span class="cstat-no" title="statement not covered" >  var binding = env.replace(/_binding\.node$/, ''),</span>
+<span class="fstat-no" title="function not covered">function getHumanEnvironment(env) {</span>
+<span class="cstat-no" title="statement not covered">  var binding = env.replace(/_binding\.node$/, ''),</span>
     parts = binding.split('-'),
     platform = getHumanPlatform(parts[0]),
     arch = getHumanArchitecture(parts[1]),
     runtime = getHumanNodeVersion(parts[2]);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (parts.length !== 3) {</span>
-<span class="cstat-no" title="statement not covered" >    return 'Unknown environment (' + binding + ')';</span>
+<span class="cstat-no" title="statement not covered">  if (parts.length !== 3) {</span>
+<span class="cstat-no" title="statement not covered">    return 'Unknown environment (' + binding + ')';</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (!platform) {</span>
-<span class="cstat-no" title="statement not covered" >    platform = 'Unsupported platform (' + parts[0] + ')';</span>
+<span class="cstat-no" title="statement not covered">  if (!platform) {</span>
+<span class="cstat-no" title="statement not covered">    platform = 'Unsupported platform (' + parts[0] + ')';</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (!arch) {</span>
-<span class="cstat-no" title="statement not covered" >    arch = 'Unsupported architecture (' + parts[1] + ')';</span>
+<span class="cstat-no" title="statement not covered">  if (!arch) {</span>
+<span class="cstat-no" title="statement not covered">    arch = 'Unsupported architecture (' + parts[1] + ')';</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (!runtime) {</span>
-<span class="cstat-no" title="statement not covered" >    runtime = 'Unsupported runtime (' + parts[2] + ')';</span>
+<span class="cstat-no" title="statement not covered">  if (!runtime) {</span>
+<span class="cstat-no" title="statement not covered">    runtime = 'Unsupported runtime (' + parts[2] + ')';</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return [</span>
+<span class="cstat-no" title="statement not covered">  return [</span>
     platform, arch, 'with', runtime,
   ].join(' ');
 }
@@ -1159,8 +1157,8 @@ var eol = require('os').EOL,
  *
  * @api public
  */
-<span class="fstat-no" title="function not covered" >function getInstalledBinaries() {</span>
-<span class="cstat-no" title="statement not covered" >  return fs.readdirSync(defaultBinaryPath);</span>
+<span class="fstat-no" title="function not covered">function getInstalledBinaries() {</span>
+<span class="cstat-no" title="statement not covered">  return fs.readdirSync(defaultBinaryPath);</span>
 }
 &nbsp;
 /**
@@ -1174,8 +1172,8 @@ var eol = require('os').EOL,
  *
  * @api public
  */
-<span class="fstat-no" title="function not covered" >function isSupportedEnvironment(platform, arch, abi) {</span>
-<span class="cstat-no" title="statement not covered" >  return (</span>
+<span class="fstat-no" title="function not covered">function isSupportedEnvironment(platform, arch, abi) {</span>
+<span class="cstat-no" title="statement not covered">  return (</span>
     false !== getHumanPlatform(platform) &amp;&amp;
     false !== getHumanArchitecture(arch) &amp;&amp;
     false !== getHumanNodeVersion(abi)
@@ -1194,11 +1192,11 @@ function getArgument(name, args) {
   var flags = args || process.argv.slice(2),
     index = flags.lastIndexOf(name);
 &nbsp;
-  <span class="missing-if-branch" title="else path not taken" >E</span>if (index === -1 || <span class="branch-1 cbranch-no" title="branch not covered" >index + 1 &gt;= flags.length)</span> {
+  <span class="missing-if-branch" title="else path not taken">E</span>if (index === -1 || <span class="branch-1 cbranch-no" title="branch not covered">index + 1 &gt;= flags.length)</span> {
     return null;
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return flags[index + 1];</span>
+<span class="cstat-no" title="statement not covered">  return flags[index + 1];</span>
 }
 &nbsp;
 /**
@@ -1217,18 +1215,18 @@ function getBinaryName() {
     variant,
     platform = process.platform;
 &nbsp;
-  <span class="missing-if-branch" title="if path not taken" >I</span>if (getArgument('--sass-binary-name')) {
-<span class="cstat-no" title="statement not covered" >    binaryName = getArgument('--sass-binary-name');</span>
-  } else <span class="missing-if-branch" title="if path not taken" >I</span>if (process.env.SASS_BINARY_NAME) {
-<span class="cstat-no" title="statement not covered" >    binaryName = process.env.SASS_BINARY_NAME;</span>
-  } else <span class="missing-if-branch" title="if path not taken" >I</span>if (process.env.npm_config_sass_binary_name) {
-<span class="cstat-no" title="statement not covered" >    binaryName = process.env.npm_config_sass_binary_name;</span>
-  } else <span class="missing-if-branch" title="if path not taken" >I</span>if (pkg.nodeSassConfig &amp;&amp; pkg.nodeSassConfig.binaryName) {
-<span class="cstat-no" title="statement not covered" >    binaryName = pkg.nodeSassConfig.binaryName;</span>
+  <span class="missing-if-branch" title="if path not taken">I</span>if (getArgument('--sass-binary-name')) {
+<span class="cstat-no" title="statement not covered">    binaryName = getArgument('--sass-binary-name');</span>
+  } else <span class="missing-if-branch" title="if path not taken">I</span>if (process.env.SASS_BINARY_NAME) {
+<span class="cstat-no" title="statement not covered">    binaryName = process.env.SASS_BINARY_NAME;</span>
+  } else <span class="missing-if-branch" title="if path not taken">I</span>if (process.env.npm_config_sass_binary_name) {
+<span class="cstat-no" title="statement not covered">    binaryName = process.env.npm_config_sass_binary_name;</span>
+  } else <span class="missing-if-branch" title="if path not taken">I</span>if (pkg.nodeSassConfig &amp;&amp; pkg.nodeSassConfig.binaryName) {
+<span class="cstat-no" title="statement not covered">    binaryName = pkg.nodeSassConfig.binaryName;</span>
   } else {
     variant = getPlatformVariant();
-    <span class="missing-if-branch" title="if path not taken" >I</span>if (variant) {
-<span class="cstat-no" title="statement not covered" >      platform += '_' + variant;</span>
+    <span class="missing-if-branch" title="if path not taken">I</span>if (variant) {
+<span class="cstat-no" title="statement not covered">      platform += '_' + variant;</span>
     }
 &nbsp;
     binaryName = [
@@ -1269,14 +1267,14 @@ function getBinaryName() {
  * @api public
  */
 &nbsp;
-<span class="fstat-no" title="function not covered" >function getBinaryUrl() {</span>
-<span class="cstat-no" title="statement not covered" >  var site = getArgument('--sass-binary-site') ||</span>
+<span class="fstat-no" title="function not covered">function getBinaryUrl() {</span>
+<span class="cstat-no" title="statement not covered">  var site = getArgument('--sass-binary-site') ||</span>
              process.env.SASS_BINARY_SITE  ||
              process.env.npm_config_sass_binary_site ||
              (pkg.nodeSassConfig &amp;&amp; pkg.nodeSassConfig.binarySite) ||
              'https://github.com/sass/node-sass/releases/download';
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return [site, 'v' + pkg.version, getBinaryName()].join('/');</span>
+<span class="cstat-no" title="statement not covered">  return [site, 'v' + pkg.version, getBinaryName()].join('/');</span>
 }
 &nbsp;
 /**
@@ -1296,14 +1294,14 @@ function getBinaryName() {
 function getBinaryPath() {
   var binaryPath;
 &nbsp;
-  <span class="missing-if-branch" title="if path not taken" >I</span>if (getArgument('--sass-binary-path')) {
-<span class="cstat-no" title="statement not covered" >    binaryPath = getArgument('--sass-binary-path');</span>
-  } else <span class="missing-if-branch" title="if path not taken" >I</span>if (process.env.SASS_BINARY_PATH) {
-<span class="cstat-no" title="statement not covered" >    binaryPath = process.env.SASS_BINARY_PATH;</span>
-  } else <span class="missing-if-branch" title="if path not taken" >I</span>if (process.env.npm_config_sass_binary_path) {
-<span class="cstat-no" title="statement not covered" >    binaryPath = process.env.npm_config_sass_binary_path;</span>
-  } else <span class="missing-if-branch" title="if path not taken" >I</span>if (pkg.nodeSassConfig &amp;&amp; pkg.nodeSassConfig.binaryPath) {
-<span class="cstat-no" title="statement not covered" >    binaryPath = pkg.nodeSassConfig.binaryPath;</span>
+  <span class="missing-if-branch" title="if path not taken">I</span>if (getArgument('--sass-binary-path')) {
+<span class="cstat-no" title="statement not covered">    binaryPath = getArgument('--sass-binary-path');</span>
+  } else <span class="missing-if-branch" title="if path not taken">I</span>if (process.env.SASS_BINARY_PATH) {
+<span class="cstat-no" title="statement not covered">    binaryPath = process.env.SASS_BINARY_PATH;</span>
+  } else <span class="missing-if-branch" title="if path not taken">I</span>if (process.env.npm_config_sass_binary_path) {
+<span class="cstat-no" title="statement not covered">    binaryPath = process.env.npm_config_sass_binary_path;</span>
+  } else <span class="missing-if-branch" title="if path not taken">I</span>if (pkg.nodeSassConfig &amp;&amp; pkg.nodeSassConfig.binaryPath) {
+<span class="cstat-no" title="statement not covered">    binaryPath = pkg.nodeSassConfig.binaryPath;</span>
   } else {
     binaryPath = path.join(defaultBinaryPath, getBinaryName().replace(/_(?=binding\.node)/, '/'));
   }
@@ -1317,11 +1315,11 @@ function getBinaryPath() {
  * @return {[]String} an array of paths
  * @api public
  */
-<span class="fstat-no" title="function not covered" >function getCachePathCandidates() {</span>
-<span class="cstat-no" title="statement not covered" >  return [</span>
+<span class="fstat-no" title="function not covered">function getCachePathCandidates() {</span>
+<span class="cstat-no" title="statement not covered">  return [</span>
     process.env.npm_config_sass_binary_cache,
     process.env.npm_config_cache,
-  ].filter(<span class="fstat-no" title="function not covered" >function(_) {</span> <span class="cstat-no" title="statement not covered" >return _; </span>});
+  ].filter(<span class="fstat-no" title="function not covered">function(_) {</span> <span class="cstat-no" title="statement not covered">return _; </span>});
 }
 &nbsp;
 /**
@@ -1335,23 +1333,23 @@ function getBinaryPath() {
  * @return {String} directory to cache binding
  * @api public
  */
-<span class="fstat-no" title="function not covered" >function getBinaryCachePath() {</span>
-<span class="cstat-no" title="statement not covered" >  var i,</span>
+<span class="fstat-no" title="function not covered">function getBinaryCachePath() {</span>
+<span class="cstat-no" title="statement not covered">  var i,</span>
     cachePath,
     cachePathCandidates = getCachePathCandidates();
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  for (i = 0; i &lt; cachePathCandidates.length; i++) {</span>
-<span class="cstat-no" title="statement not covered" >    cachePath = path.join(cachePathCandidates[i], pkg.name, pkg.version);</span>
+<span class="cstat-no" title="statement not covered">  for (i = 0; i &lt; cachePathCandidates.length; i++) {</span>
+<span class="cstat-no" title="statement not covered">    cachePath = path.join(cachePathCandidates[i], pkg.name, pkg.version);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      mkdir.sync(cachePath);</span>
-<span class="cstat-no" title="statement not covered" >      return cachePath;</span>
+<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="cstat-no" title="statement not covered">      mkdir.sync(cachePath);</span>
+<span class="cstat-no" title="statement not covered">      return cachePath;</span>
     } catch (e) {
       // Directory is not writable, try another
     }
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return '';</span>
+<span class="cstat-no" title="statement not covered">  return '';</span>
 }
 &nbsp;
 /**
@@ -1365,23 +1363,23 @@ function getBinaryPath() {
  * @return {String} path to cached binary
  * @api public
  */
-<span class="fstat-no" title="function not covered" >function getCachedBinary() {</span>
-<span class="cstat-no" title="statement not covered" >  var i,</span>
+<span class="fstat-no" title="function not covered">function getCachedBinary() {</span>
+<span class="cstat-no" title="statement not covered">  var i,</span>
     cachePath,
     cacheBinary,
     cachePathCandidates = getCachePathCandidates(),
     binaryName = getBinaryName();
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  for (i = 0; i &lt; cachePathCandidates.length; i++) {</span>
-<span class="cstat-no" title="statement not covered" >    cachePath = path.join(cachePathCandidates[i], pkg.name, pkg.version);</span>
-<span class="cstat-no" title="statement not covered" >    cacheBinary = path.join(cachePath, binaryName);</span>
+<span class="cstat-no" title="statement not covered">  for (i = 0; i &lt; cachePathCandidates.length; i++) {</span>
+<span class="cstat-no" title="statement not covered">    cachePath = path.join(cachePathCandidates[i], pkg.name, pkg.version);</span>
+<span class="cstat-no" title="statement not covered">    cacheBinary = path.join(cachePath, binaryName);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (fs.existsSync(cacheBinary)) {</span>
-<span class="cstat-no" title="statement not covered" >      return cacheBinary;</span>
+<span class="cstat-no" title="statement not covered">    if (fs.existsSync(cacheBinary)) {</span>
+<span class="cstat-no" title="statement not covered">      return cacheBinary;</span>
     }
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return '';</span>
+<span class="cstat-no" title="statement not covered">  return '';</span>
 }
 &nbsp;
 /**
@@ -1417,8 +1415,8 @@ function getVersionInfo(binding) {
 function getPlatformVariant() {
   var contents = '';
 &nbsp;
-  <span class="missing-if-branch" title="if path not taken" >I</span>if (process.platform !== 'linux') {
-<span class="cstat-no" title="statement not covered" >    return '';</span>
+  <span class="missing-if-branch" title="if path not taken">I</span>if (process.platform !== 'linux') {
+<span class="cstat-no" title="statement not covered">    return '';</span>
   }
 &nbsp;
   try {
@@ -1426,12 +1424,12 @@ function getPlatformVariant() {
 &nbsp;
     // Buffer.indexOf was added in v1.5.0 so cast to string for old node
     // Delay contents.toStrings because it's expensive
-    <span class="missing-if-branch" title="if path not taken" >I</span>if (!contents.indexOf) {
-<span class="cstat-no" title="statement not covered" >      contents = contents.toString();</span>
+    <span class="missing-if-branch" title="if path not taken">I</span>if (!contents.indexOf) {
+<span class="cstat-no" title="statement not covered">      contents = contents.toString();</span>
     }
 &nbsp;
-    <span class="missing-if-branch" title="if path not taken" >I</span>if (contents.indexOf('libc.musl-x86_64.so.1') !== -1) {
-<span class="cstat-no" title="statement not covered" >      return 'musl';</span>
+    <span class="missing-if-branch" title="if path not taken">I</span>if (contents.indexOf('libc.musl-x86_64.so.1') !== -1) {
+<span class="cstat-no" title="statement not covered">      return 'musl';</span>
     }
   } catch (err) { } // eslint-disable-line no-empty
 &nbsp;
@@ -1451,10 +1449,11 @@ module.exports.getInstalledBinaries = getInstalledBinaries;
 module.exports.isSupportedEnvironment = isSupportedEnvironment;
 &nbsp;
 &nbsp;</pre></td></tr>
-</table></pre>
+</tbody></table></pre>
 </div>
 <div class="footer">
     <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Sat Apr 15 2017 22:18:58 GMT+0000 (UTC)</div>
 </div>
-</body>
-</html>
+
+
+</body></html>
