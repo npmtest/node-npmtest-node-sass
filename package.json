@@ -1,1 +1,40 @@
-{     "devDependencies": {         "node-sass": "*",         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-node-sass",     "homepage": "https://github.com/npmtest/node-npmtest-node-sass",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-node-sass.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### test coverage for  [node-sass (v4.5.2)](https://github.com/sass/node-sass)  [![npm package](https://img.shields.io/npm/v/npmtest-node-sass.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-node-sass) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-node-sass.svg)](https://travis-ci.org/npmtest/node-npmtest-node-sass)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "node-sass": "*",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-node-sass",
+    "keywords": [
+        "coverage",
+        "test",
+        "node-sass"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_node_sass.js",
+    "name": "npmtest-node-sass",
+    "nameAlias": "npmtest_node_sass",
+    "nameOriginal": "npmtest-node-sass",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-node-sass.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.3"
+}
