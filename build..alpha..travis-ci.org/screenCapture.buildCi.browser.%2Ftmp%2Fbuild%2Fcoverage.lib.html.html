@@ -1,0 +1,1459 @@
+<html lang="en"><head>
+    <title>Code coverage report for node-npmtest-node-sass/node_modules/node-sass/lib/extensions.js</title>
+    <meta charset="utf-8">
+    <style>
+        body, html {
+            margin:0; padding: 0;
+        }
+        body {
+            font-family: Arial, Helvetica;
+            font-size: 10pt;
+        }
+        div.header, div.footer {
+            background: #eee;
+            padding: 1em;
+        }
+        div.header {
+            height: 160px;
+            padding: 0 1em 0 1em;
+            z-index: 100;
+            position: fixed;
+            top: 0;
+            border-bottom: 1px solid #666;
+            width: 100%;
+        }
+        div.footer {
+            border-top: 1px solid #666;
+        }
+        div.body {
+            margin-top: 170px;
+        }
+        div.meta {
+            font-size: 90%;
+            text-align: center;
+        }
+        h1, h2, h3 {
+            font-weight: normal;
+        }
+        h1 {
+            font-size: 12pt;
+        }
+        h2 {
+            font-size: 10pt;
+        }
+        pre {
+            font-family: Menlo, Monaco, Consolas, Courier New, monospace;
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+            tab-size: 2;
+        }
+
+        div.path { font-size: 110%; }
+        div.path a:link, div.path a:visited { color: #000; }
+        table.coverage { border-collapse: collapse; margin:0; padding: 0 }
+
+        table.coverage td {
+            margin: 0;
+            padding: 0;
+            color: #111;
+            vertical-align: top;
+        }
+        table.coverage td.line-count {
+            width: 50px;
+            text-align: right;
+            padding-right: 5px;
+        }
+        table.coverage td.line-coverage {
+            color: #777 !important;
+            text-align: right;
+            border-left: 1px solid #666;
+            border-right: 1px solid #666;
+        }
+
+        table.coverage td.text {
+        }
+
+        table.coverage td span.cline-any {
+            display: inline-block;
+            padding: 0 5px;
+            width: 40px;
+        }
+        table.coverage td span.cline-neutral {
+            background: #eee;
+        }
+        table.coverage td span.cline-yes {
+            background: #b5d592;
+            color: #999;
+        }
+        table.coverage td span.cline-no {
+            background: #fc8c84;
+        }
+
+        .cstat-yes { color: #111; }
+        .cstat-no { background: #fc8c84; color: #111; }
+        .fstat-no { background: #ffc520; color: #111 !important; }
+        .cbranch-no { background:  yellow !important; color: #111; }
+
+        .cstat-skip { background: #ddd; color: #111; }
+        .fstat-skip { background: #ddd; color: #111 !important; }
+        .cbranch-skip { background: #ddd !important; color: #111; }
+
+        .missing-if-branch {
+            display: inline-block;
+            margin-right: 10px;
+            position: relative;
+            padding: 0 4px;
+            background: black;
+            color: yellow;
+        }
+
+        .skip-if-branch {
+            display: none;
+            margin-right: 10px;
+            position: relative;
+            padding: 0 4px;
+            background: #ccc;
+            color: white;
+        }
+
+        .missing-if-branch .typ, .skip-if-branch .typ {
+            color: inherit !important;
+        }
+
+        .entity, .metric { font-weight: bold; }
+        .metric { display: inline-block; border: 1px solid #333; padding: 0.3em; background: white; }
+        .metric small { font-size: 80%; font-weight: normal; color: #666; }
+
+        div.coverage-summary table { border-collapse: collapse; margin: 3em; font-size: 110%; }
+        div.coverage-summary td, div.coverage-summary table  th { margin: 0; padding: 0.25em 1em; border-top: 1px solid #666; border-bottom: 1px solid #666; }
+        div.coverage-summary th { text-align: left; border: 1px solid #666; background: #eee; font-weight: normal; }
+        div.coverage-summary th.file { border-right: none !important; }
+        div.coverage-summary th.pic { border-left: none !important; text-align: right; }
+        div.coverage-summary th.pct { border-right: none !important; }
+        div.coverage-summary th.abs { border-left: none !important; text-align: right; }
+        div.coverage-summary td.pct { text-align: right; border-left: 1px solid #666; }
+        div.coverage-summary td.abs { text-align: right; font-size: 90%; color: #444; border-right: 1px solid #666; }
+        div.coverage-summary td.file { text-align: right; border-left: 1px solid #666; white-space: nowrap;  }
+        div.coverage-summary td.pic { min-width: 120px !important;  }
+        div.coverage-summary a:link { color: #000; }
+        div.coverage-summary a:visited { color: #333; }
+        div.coverage-summary tfoot td { border-top: 1px solid #666; }
+
+        div.coverage-summary .yui3-datatable-sort-indicator, div.coverage-summary .dummy-sort-indicator {
+            height: 10px;
+            width: 7px;
+            display: inline-block;
+            margin-left: 0.5em;
+        }
+        div.coverage-summary .yui3-datatable-sort-indicator {
+            background: no-repeat scroll 0 0 transparent;
+        }
+        div.coverage-summary .yui3-datatable-sorted .yui3-datatable-sort-indicator {
+            background-position: 0 -20px;
+        }
+        div.coverage-summary .yui3-datatable-sorted-desc .yui3-datatable-sort-indicator {
+            background-position: 0 -10px;
+        }
+
+        .high { background: #b5d592 !important; }
+        .medium { background: #ffe87c !important; }
+        .low { background: #fc8c84 !important; }
+
+        span.cover-fill, span.cover-empty {
+            display:inline-block;
+            border:1px solid #444;
+            background: white;
+            height: 12px;
+        }
+        span.cover-fill {
+            background: #ccc;
+            border-right: 1px solid #444;
+        }
+        span.cover-empty {
+            background: white;
+            border-left: none;
+        }
+        span.cover-full {
+            border-right: none !important;
+        }
+        pre.prettyprint {
+            border: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+        .com { color: #999 !important; }
+        .ignore-none { color: #999; font-weight: normal; }
+
+    </style>
+</head>
+<body>
+<div class="header medium">
+    <h1 style="font-weight: bold;">
+        <a href="https://github.com/npmtest/node-npmtest-node-sass">npmtest-node-sass (v0.0.1)</a>
+    </h1>
+    <h1>Code coverage report for <span class="entity">node-npmtest-node-sass/node_modules/node-sass/lib/extensions.js</span></h1>
+    <h2>
+        
+        Statements: <span class="metric">66.94% <small>(83 / 124)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        
+        
+        Branches: <span class="metric">45.68% <small>(37 / 81)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        
+        
+        Functions: <span class="metric">88.24% <small>(15 / 17)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        
+        
+        Lines: <span class="metric">66.94% <small>(83 / 124)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../../index.html">All files</a> » <a href="index.html">node-npmtest-node-sass/node_modules/node-sass/lib/</a> » extensions.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tbody><tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">23</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23</span>
+<span class="cline-any cline-yes">23</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/*!
+ * node-sass: lib/extensions.js
+ */
+&nbsp;
+var eol = require('os').EOL,
+  fs = require('fs'),
+  pkg = require('../package.json'),
+  mkdir = require('mkdirp'),
+  path = require('path'),
+  defaultBinaryPath = path.join(__dirname, '..', 'vendor');
+&nbsp;
+/**
+ * Get the human readable name of the Platform that is running
+ *
+ * @param  {string} platform - An OS platform to match, or null to fallback to
+ * the current process platform
+ * @return {Object} The name of the platform if matched, false otherwise
+ *
+ * @api public
+ */
+function getHumanPlatform(platform) {
+  switch (platform || process.platform) {
+<span class="branch-0 cbranch-no" title="branch not covered">    case 'darwin': <span class="cstat-no" title="statement not covered">return 'OS X';</span></span>
+<span class="branch-1 cbranch-no" title="branch not covered">    case 'freebsd': <span class="cstat-no" title="statement not covered">return 'FreeBSD';</span></span>
+    case 'linux': return 'Linux';
+<span class="branch-3 cbranch-no" title="branch not covered">    case 'linux_musl': <span class="cstat-no" title="statement not covered">return 'Linux/musl';</span></span>
+<span class="branch-4 cbranch-no" title="branch not covered">    case 'win32': <span class="cstat-no" title="statement not covered">return 'Windows';</span></span>
+<span class="branch-5 cbranch-no" title="branch not covered">    default: <span class="cstat-no" title="statement not covered">return false;</span></span>
+  }
+}
+&nbsp;
+/**
+ * Provides a more readable version of the architecture
+ *
+ * @param  {string} arch - An instruction architecture name to match, or null to
+ * lookup the current process architecture
+ * @return {Object} The value of the process architecture, or false if unknown
+ *
+ * @api public
+ */
+function getHumanArchitecture(arch) {
+  switch (arch || process.arch) {
+<span class="branch-0 cbranch-no" title="branch not covered">    case 'ia32': <span class="cstat-no" title="statement not covered">return '32-bit';</span></span>
+<span class="branch-1 cbranch-no" title="branch not covered">    case 'x86': <span class="cstat-no" title="statement not covered">return '32-bit';</span></span>
+    case 'x64': return '64-bit';
+<span class="branch-3 cbranch-no" title="branch not covered">    default: <span class="cstat-no" title="statement not covered">return false;</span></span>
+  }
+}
+&nbsp;
+/**
+ * Get the friendly name of the Node environment being run
+ *
+ * @param  {Object} abi - A Node Application Binary Interface value, or null to
+ * fallback to the current Node ABI
+ * @return {Object} Returns a string name of the Node environment or false if
+ * unmatched
+ *
+ * @api public
+ */
+function getHumanNodeVersion(abi) {
+  switch (parseInt(abi || process.versions.modules, 10)) {
+<span class="branch-0 cbranch-no" title="branch not covered">    case 11: <span class="cstat-no" title="statement not covered">return 'Node 0.10.x';</span></span>
+<span class="branch-1 cbranch-no" title="branch not covered">    case 14: <span class="cstat-no" title="statement not covered">return 'Node 0.12.x';</span></span>
+<span class="branch-2 cbranch-no" title="branch not covered">    case 42: <span class="cstat-no" title="statement not covered">return 'io.js 1.x';</span></span>
+<span class="branch-3 cbranch-no" title="branch not covered">    case 43: <span class="cstat-no" title="statement not covered">return 'io.js 1.1.x';</span></span>
+<span class="branch-4 cbranch-no" title="branch not covered">    case 44: <span class="cstat-no" title="statement not covered">return 'io.js 2.x';</span></span>
+<span class="branch-5 cbranch-no" title="branch not covered">    case 45: <span class="cstat-no" title="statement not covered">return 'io.js 3.x';</span></span>
+<span class="branch-6 cbranch-no" title="branch not covered">    case 46: <span class="cstat-no" title="statement not covered">return 'Node.js 4.x';</span></span>
+<span class="branch-7 cbranch-no" title="branch not covered">    case 47: <span class="cstat-no" title="statement not covered">return 'Node.js 5.x';</span></span>
+    case 48: return 'Node.js 6.x';
+<span class="branch-9 cbranch-no" title="branch not covered">    case 51: <span class="cstat-no" title="statement not covered">return 'Node.js 7.x';</span></span>
+<span class="branch-10 cbranch-no" title="branch not covered">    case 54: <span class="cstat-no" title="statement not covered">return 'Node.js 8.x';</span></span>
+<span class="branch-11 cbranch-no" title="branch not covered">    default: <span class="cstat-no" title="statement not covered">return false;</span></span>
+  }
+}
+&nbsp;
+/**
+ * Get a human readable description of where node-sass is running to support
+ * user error reporting when something goes wrong
+ *
+ * @param  {string} env - The name of the native bindings that is to be parsed
+ * @return {string} A description of what os, architecture, and Node version
+ * that is being run
+ *
+ * @api public
+ */
+function getHumanEnvironment(env) {
+  var binding = env.replace(/_binding\.node$/, ''),
+    parts = binding.split('-'),
+    platform = getHumanPlatform(parts[0]),
+    arch = getHumanArchitecture(parts[1]),
+    runtime = getHumanNodeVersion(parts[2]);
+&nbsp;
+  <span class="missing-if-branch" title="if path not taken">I</span>if (parts.length !== 3) {
+<span class="cstat-no" title="statement not covered">    return 'Unknown environment (' + binding + ')';</span>
+  }
+&nbsp;
+  <span class="missing-if-branch" title="if path not taken">I</span>if (!platform) {
+<span class="cstat-no" title="statement not covered">    platform = 'Unsupported platform (' + parts[0] + ')';</span>
+  }
+&nbsp;
+  <span class="missing-if-branch" title="if path not taken">I</span>if (!arch) {
+<span class="cstat-no" title="statement not covered">    arch = 'Unsupported architecture (' + parts[1] + ')';</span>
+  }
+&nbsp;
+  <span class="missing-if-branch" title="if path not taken">I</span>if (!runtime) {
+<span class="cstat-no" title="statement not covered">    runtime = 'Unsupported runtime (' + parts[2] + ')';</span>
+  }
+&nbsp;
+  return [
+    platform, arch, 'with', runtime,
+  ].join(' ');
+}
+&nbsp;
+/**
+ * Get the value of the binaries under the default path
+ *
+ * @return {Array} The currently installed node-sass bindings
+ *
+ * @api public
+ */
+function getInstalledBinaries() {
+  return fs.readdirSync(defaultBinaryPath);
+}
+&nbsp;
+/**
+ * Check that an environment matches the whitelisted values or the current
+ * environment if no parameters are passed
+ *
+ * @param  {string} platform - The name of the OS platform(darwin, win32, etc...)
+ * @param  {string} arch - The instruction set architecture of the Node environment
+ * @param  {string} abi - The Node Application Binary Interface
+ * @return {Boolean} True, if node-sass supports the current platform, false otherwise
+ *
+ * @api public
+ */
+function isSupportedEnvironment(platform, arch, abi) {
+  return (
+    false !== getHumanPlatform(platform) &amp;&amp;
+    false !== getHumanArchitecture(arch) &amp;&amp;
+    false !== getHumanNodeVersion(abi)
+  );
+}
+&nbsp;
+/**
+ * Get the value of a CLI argument
+ *
+ * @param {String} name
+ * @param {Array} args
+ * @api private
+ */
+&nbsp;
+function getArgument(name, args) {
+  var flags = args || process.argv.slice(2),
+    index = flags.lastIndexOf(name);
+&nbsp;
+  <span class="missing-if-branch" title="else path not taken">E</span>if (index === -1 || <span class="branch-1 cbranch-no" title="branch not covered">index + 1 &gt;= flags.length)</span> {
+    return null;
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered">  return flags[index + 1];</span>
+}
+&nbsp;
+/**
+ * Get binary name.
+ * If environment variable SASS_BINARY_NAME,
+ * .npmrc variable sass_binary_name or
+ * process argument --binary-name is provided,
+ * return it as is, otherwise make default binary
+ * name: {platform}-{arch}-{v8 version}.node
+ *
+ * @api public
+ */
+&nbsp;
+function getBinaryName() {
+  var binaryName,
+    variant,
+    platform = process.platform;
+&nbsp;
+  <span class="missing-if-branch" title="if path not taken">I</span>if (getArgument('--sass-binary-name')) {
+<span class="cstat-no" title="statement not covered">    binaryName = getArgument('--sass-binary-name');</span>
+  } else <span class="missing-if-branch" title="if path not taken">I</span>if (process.env.SASS_BINARY_NAME) {
+<span class="cstat-no" title="statement not covered">    binaryName = process.env.SASS_BINARY_NAME;</span>
+  } else <span class="missing-if-branch" title="if path not taken">I</span>if (process.env.npm_config_sass_binary_name) {
+<span class="cstat-no" title="statement not covered">    binaryName = process.env.npm_config_sass_binary_name;</span>
+  } else <span class="missing-if-branch" title="if path not taken">I</span>if (pkg.nodeSassConfig &amp;&amp; pkg.nodeSassConfig.binaryName) {
+<span class="cstat-no" title="statement not covered">    binaryName = pkg.nodeSassConfig.binaryName;</span>
+  } else {
+    variant = getPlatformVariant();
+    <span class="missing-if-branch" title="if path not taken">I</span>if (variant) {
+<span class="cstat-no" title="statement not covered">      platform += '_' + variant;</span>
+    }
+&nbsp;
+    binaryName = [
+      platform, '-',
+      process.arch, '-',
+      process.versions.modules
+    ].join('');
+  }
+&nbsp;
+  return [binaryName, 'binding.node'].join('_');
+}
+&nbsp;
+/**
+ * Determine the URL to fetch binary file from.
+ * By default fetch from the node-sass distribution
+ * site on GitHub.
+ *
+ * The default URL can be overriden using
+ * the environment variable SASS_BINARY_SITE,
+ * .npmrc variable sass_binary_site or
+ * or a command line option --sass-binary-site:
+ *
+ *   node scripts/install.js --sass-binary-site http://example.com/
+ *
+ * The URL should to the mirror of the repository
+ * laid out as follows:
+ *
+ * SASS_BINARY_SITE/
+ *
+ *  v3.0.0
+ *  v3.0.0/freebsd-x64-14_binding.node
+ *  ....
+ *  v3.0.0
+ *  v3.0.0/freebsd-ia32-11_binding.node
+ *  v3.0.0/freebsd-x64-42_binding.node
+ *  ... etc. for all supported versions and platforms
+ *
+ * @api public
+ */
+&nbsp;
+<span class="fstat-no" title="function not covered">function getBinaryUrl() {</span>
+<span class="cstat-no" title="statement not covered">  var site = getArgument('--sass-binary-site') ||</span>
+             process.env.SASS_BINARY_SITE  ||
+             process.env.npm_config_sass_binary_site ||
+             (pkg.nodeSassConfig &amp;&amp; pkg.nodeSassConfig.binarySite) ||
+             'https://github.com/sass/node-sass/releases/download';
+&nbsp;
+<span class="cstat-no" title="statement not covered">  return [site, 'v' + pkg.version, getBinaryName()].join('/');</span>
+}
+&nbsp;
+/**
+ * Get binary path.
+ * If environment variable SASS_BINARY_PATH,
+ * .npmrc variable sass_binary_path or
+ * process argument --sass-binary-path is provided,
+ * select it by appending binary name, otherwise
+ * make default binary path using binary name.
+ * Once the primary selection is made, check if
+ * callers wants to throw if file not exists before
+ * returning.
+ *
+ * @api public
+ */
+&nbsp;
+function getBinaryPath() {
+  var binaryPath;
+&nbsp;
+  <span class="missing-if-branch" title="if path not taken">I</span>if (getArgument('--sass-binary-path')) {
+<span class="cstat-no" title="statement not covered">    binaryPath = getArgument('--sass-binary-path');</span>
+  } else <span class="missing-if-branch" title="if path not taken">I</span>if (process.env.SASS_BINARY_PATH) {
+<span class="cstat-no" title="statement not covered">    binaryPath = process.env.SASS_BINARY_PATH;</span>
+  } else <span class="missing-if-branch" title="if path not taken">I</span>if (process.env.npm_config_sass_binary_path) {
+<span class="cstat-no" title="statement not covered">    binaryPath = process.env.npm_config_sass_binary_path;</span>
+  } else <span class="missing-if-branch" title="if path not taken">I</span>if (pkg.nodeSassConfig &amp;&amp; pkg.nodeSassConfig.binaryPath) {
+<span class="cstat-no" title="statement not covered">    binaryPath = pkg.nodeSassConfig.binaryPath;</span>
+  } else {
+    binaryPath = path.join(defaultBinaryPath, getBinaryName().replace(/_(?=binding\.node)/, '/'));
+  }
+&nbsp;
+  return binaryPath;
+}
+&nbsp;
+/**
+ * An array of paths suitable for use as a local disk cache of the binding.
+ *
+ * @return {[]String} an array of paths
+ * @api public
+ */
+function getCachePathCandidates() {
+  return [
+    process.env.npm_config_sass_binary_cache,
+    process.env.npm_config_cache,
+  ].filter(function(_) { return _; });
+}
+&nbsp;
+/**
+ * The most suitable location for caching the binding on disk.
+ *
+ * Given the candidates directories provided by `getCachePathCandidates()` this
+ * returns the first writable directory. By treating the candidate directories
+ * as a prioritised list this method is deterministic, assuming no change to the
+ * local environment.
+ *
+ * @return {String} directory to cache binding
+ * @api public
+ */
+function getBinaryCachePath() {
+  var i,
+    cachePath,
+    cachePathCandidates = getCachePathCandidates();
+&nbsp;
+  for (i = 0; i &lt; cachePathCandidates.length; i++) {
+    cachePath = path.join(cachePathCandidates[i], pkg.name, pkg.version);
+&nbsp;
+    try {
+      mkdir.sync(cachePath);
+      return cachePath;
+    } catch (e) {
+      // Directory is not writable, try another
+    }
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered">  return '';</span>
+}
+&nbsp;
+/**
+ * The cached binding
+ *
+ * Check the candidates directories provided by `getCachePathCandidates()` for
+ * the binding file, if it exists. By treating the candidate directories
+ * as a prioritised list this method is deterministic, assuming no change to the
+ * local environment.
+ *
+ * @return {String} path to cached binary
+ * @api public
+ */
+function getCachedBinary() {
+  var i,
+    cachePath,
+    cacheBinary,
+    cachePathCandidates = getCachePathCandidates(),
+    binaryName = getBinaryName();
+&nbsp;
+  for (i = 0; i &lt; cachePathCandidates.length; i++) {
+    cachePath = path.join(cachePathCandidates[i], pkg.name, pkg.version);
+    cacheBinary = path.join(cachePath, binaryName);
+&nbsp;
+    <span class="missing-if-branch" title="else path not taken">E</span>if (fs.existsSync(cacheBinary)) {
+      return cacheBinary;
+    }
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered">  return '';</span>
+}
+&nbsp;
+/**
+ * Does the supplied binary path exist
+ *
+ * @param {String} binaryPath
+ * @api public
+ */
+&nbsp;
+function hasBinary(binaryPath) {
+  return fs.existsSync(binaryPath);
+}
+&nbsp;
+/**
+ * Get Sass version information
+ *
+ * @api public
+ */
+&nbsp;
+<span class="fstat-no" title="function not covered">function getVersionInfo(binding) {</span>
+<span class="cstat-no" title="statement not covered">  return [</span>
+    ['node-sass', pkg.version, '(Wrapper)', '[JavaScript]'].join('\t'),
+    ['libsass  ', binding.libsassVersion(), '(Sass Compiler)', '[C/C++]'].join('\t'),
+  ].join(eol);
+}
+&nbsp;
+/**
+ * Gets the platform variant, currently either an empty string or 'musl' for Linux/musl platforms.
+ *
+ * @api public
+ */
+&nbsp;
+function getPlatformVariant() {
+  var contents = '';
+&nbsp;
+  <span class="missing-if-branch" title="if path not taken">I</span>if (process.platform !== 'linux') {
+<span class="cstat-no" title="statement not covered">    return '';</span>
+  }
+&nbsp;
+  try {
+    contents = fs.readFileSync(process.execPath);
+&nbsp;
+    // Buffer.indexOf was added in v1.5.0 so cast to string for old node
+    // Delay contents.toStrings because it's expensive
+    <span class="missing-if-branch" title="if path not taken">I</span>if (!contents.indexOf) {
+<span class="cstat-no" title="statement not covered">      contents = contents.toString();</span>
+    }
+&nbsp;
+    <span class="missing-if-branch" title="if path not taken">I</span>if (contents.indexOf('libc.musl-x86_64.so.1') !== -1) {
+<span class="cstat-no" title="statement not covered">      return 'musl';</span>
+    }
+  } catch (err) { } // eslint-disable-line no-empty
+&nbsp;
+  return '';
+}
+&nbsp;
+module.exports.hasBinary = hasBinary;
+module.exports.getBinaryUrl = getBinaryUrl;
+module.exports.getBinaryName = getBinaryName;
+module.exports.getBinaryPath = getBinaryPath;
+module.exports.getBinaryCachePath = getBinaryCachePath;
+module.exports.getCachedBinary = getCachedBinary;
+module.exports.getCachePathCandidates = getCachePathCandidates;
+module.exports.getVersionInfo = getVersionInfo;
+module.exports.getHumanEnvironment = getHumanEnvironment;
+module.exports.getInstalledBinaries = getInstalledBinaries;
+module.exports.isSupportedEnvironment = isSupportedEnvironment;
+&nbsp;
+&nbsp;</pre></td></tr>
+</tbody></table></pre>
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 18 2017 16:27:51 GMT+0000 (UTC)</div>
+</div>
+
+
+</body></html>
