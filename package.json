@@ -1,6 +1,6 @@
 {
     "author": "kai zhu <kaizhu256@gmail.com>",
-    "description": "#### test coverage for  [node-sass (v4.5.2)](https://github.com/sass/node-sass)  [![npm package](https://img.shields.io/npm/v/npmtest-node-sass.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-node-sass) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-node-sass.svg)](https://travis-ci.org/npmtest/node-npmtest-node-sass)",
+    "description": "#### basic test coverage for  [node-sass (v4.5.2)](https://github.com/sass/node-sass)  [![npm package](https://img.shields.io/npm/v/npmtest-node-sass.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-node-sass) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-node-sass.svg)](https://travis-ci.org/npmtest/node-npmtest-node-sass)",
     "devDependencies": {
         "electron-lite": "kaizhu256/node-electron-lite#alpha",
         "node-sass": "*",
